@@ -503,24 +503,34 @@ let movies = [
 ];
 reload(movies);
 function reload(arr) {
-  fifth.innerHTML = "";
+	let img = document.createElement("img");
+	fifth.innerHTML = "";
   for (let item of arr) {
-    let li = document.createElement("li");
-    li.innerHTML = item.Title;
-    li.classList.add("promo__interactive-item");
-    fifth.append(li);
-    li.onclick = (e) => {
-      modal.classList.remove("hide", "fade");
-      modal.classList.add("show", "fade");
-      if (item.Title === e.target.value) {
-        let li = document.createElement("li");
-        li.innerHTML = item;
-        modal_content.append(li);
+	  let li = document.createElement("li");
+	  li.innerHTML = item.Title;
+	  li.classList.add("promo__interactive-item");
+	  fifth.append(li);
+	  li.onclick = (e) => {
+		  modal.classList.remove("hide", "fade");
+		  modal.classList.add("show", "fade");
+		  console.log(item);
+		  if (item.Title === e.target.innerHTML) {
+			  for (let elem in item) {
+				  let li1 = document.createElement("li");
+				  console.log(elem);
+				  li1.innerHTML = elem;
+				  modal_content.append(li1);
+				  li1.classList.add('promo__interactive-item')
+				  close_modal.onclick = () => {
+				    li1.innerHTML = "";
+					modal.classList.remove("show", "fade");
+					modal.classList.add("hide", "fade");
+				  };
+			//   elem.classList.add("promo__interactive-item")
+        }
+        // li1.innerHTML = item.Poster;
+        // img.src = item.Poster
       }
     };
-	close_modal.onclick = () => {
-		modal.classList.remove("show", "fade");
-		modal.classList.add("hide", "fade");
-	}
   }
 }

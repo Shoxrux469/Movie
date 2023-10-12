@@ -394,10 +394,11 @@
     width: 30px;
     background-color: #fff;
     border: 2px solid grey;
+    z-index: 100001;
     border-radius: 100%;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     font-size: 24px;
     color: grey;
 }
