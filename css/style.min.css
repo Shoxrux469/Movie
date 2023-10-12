@@ -198,7 +198,7 @@
 
 .promo__interactive-list {
     list-style-type: none;
-    margin-top: 35px;
+    margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -379,12 +379,13 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 400px;
+    width: 600px;
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
     border-radius: 14px;
-    max-height: 400px;
+    z-index: 6001;
+    max-height: 600px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -403,7 +404,7 @@
     color: grey;
 }
 .fade {
-    animation-name: fade;
+    animation-name: fade;   
     animation-duration: 0.7s;
 }
 
